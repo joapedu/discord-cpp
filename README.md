@@ -1,8 +1,8 @@
 <h1 align="center">📖 College Project 📖</h1>
 
 <div align="center">
-<h4>⭐️ Project making a Mp3 using C++ at the college subject "Programing Language". ⭐️</h4>
-  <a href="https://http://linguagemc.com.br/o-que-e-linguagem-c//"><img height= "35" src= "https://img.shields.io/badge/c++-35495E?style=for-the-badge&logo=c&logoColor=4FC08D">&nbsp;&nbsp;&nbsp;&nbsp;</a><img src="https://img.icons8.com/cute-clipart/64/null/services.png"/><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height= "50" src= "https://www.svgrepo.com/show/270190/mp3.svg">
+<h4>⭐️ Project making a Discord app using C++ at the college subject "Programing Language". ⭐️</h4>
+  <img height="50" src="https://w7.pngwing.com/pngs/46/626/png-transparent-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template-blue.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img.icons8.com/cute-clipart/64/null/services.png"/><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height= "50" src= "./assets/cpp.png">
 </a>
 </div>
 
