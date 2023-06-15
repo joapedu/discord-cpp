@@ -2,7 +2,7 @@
 
 <div align="center">
 <h4>⭐️ Project making a Discord app using C++ at the college subject "Programing Language". ⭐️</h4>
-  <img height="50" src="https://w7.pngwing.com/pngs/46/626/png-transparent-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template-blue.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img.icons8.com/cute-clipart/64/null/services.png"/><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height= "50" src= "./assets/cpp.png">
+  <img height="50" src="./assets/cpp.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img.icons8.com/cute-clipart/64/null/services.png"/><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height= "50" src= "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png">
 </a>
 </div>
 
