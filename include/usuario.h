@@ -26,18 +26,18 @@ class Usuario {
     ~Usuario();
 
 //getters dos atributos da classe User
-    int getId();
-    string getNome();
-    string getEmail();
-    string getSenha();
+    int getId() const;
+    string getNome() const;
+    string getEmail() const;
+    string getSenha() const;
     bool getLogado();
 
 //setters dos atributos da classe User
     void setId(int id);
     void setLogado(bool logado);
-    void setNome(string nome);
-    void setEmail(string email);
-    void setSenha(string senha);
+    void setNome(string const nome);
+    void setEmail(string const email);
+    void setSenha(string const senha);
 };
 
 #endif
