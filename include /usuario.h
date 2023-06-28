@@ -16,7 +16,7 @@ class Usuario {
     bool logado = false;
 
    public:
-//construtor
+//construtor com parametros da classe usuario
     Usuario(int id, string nome, string email, string senha);
 
 //construtor padrão
@@ -25,21 +25,18 @@ class Usuario {
 //destrutor
     ~Usuario();
 
+//getters dos atributos da classe User
     int getId();
     string getNome();
     string getEmail();
     string getSenha();
-
     bool getLogado();
 
+//setters dos atributos da classe User
     void setId(int id);
-
     void setLogado(bool logado);
-
     void setNome(string nome);
-
     void setEmail(string email);
-
     void setSenha(string senha);
 };
 
