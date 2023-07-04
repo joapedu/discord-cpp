@@ -1,5 +1,11 @@
 \hypertarget{classCanal}{}\doxysection{Referência da Classe Canal}
 \label{classCanal}\index{Canal@{Canal}}
+Diagrama de hierarquia para Canal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCanal}
+\end{center}
+\end{figure}
 \doxysubsection*{Membros Públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,6 +23,12 @@ virtual string {\bfseries get\+Tipo} () const
 \item 
 \mbox{\Hypertarget{classCanal_aa4d2b1d67bca508c096d318765cba610}\label{classCanal_aa4d2b1d67bca508c096d318765cba610}} 
 virtual void {\bfseries set\+Tipo} (string const tipo)
+\item 
+\mbox{\Hypertarget{classCanal_ac2f95842860209d2e2a64e5eab2206a1}\label{classCanal_ac2f95842860209d2e2a64e5eab2206a1}} 
+virtual vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ {\bfseries get\+Mensagens} () const =0
+\item 
+\mbox{\Hypertarget{classCanal_abdcbc81dd8abc9c6875c8bc0872d34a6}\label{classCanal_abdcbc81dd8abc9c6875c8bc0872d34a6}} 
+virtual void {\bfseries send\+Mensagem} (const \mbox{\hyperlink{classMensagem}{Mensagem}} mensagem)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Atributos Protegidos}
 \begin{DoxyCompactItemize}

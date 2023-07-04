@@ -7,40 +7,43 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}mensagem.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanal}{Canal}}\ \{}
-\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ nome;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{string}\ tipo;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \textcolor{comment}{//construtor}}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classCanal}{Canal}}();}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{comment}{//sobrecarregado}}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classCanal}{Canal}}(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ nome,\ \textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ tipo);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{//destrutor}}
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classCanal}{\string~Canal}}();}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{comment}{//retorna\ o\ nome\ do\ canal}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ getNome()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{comment}{//altera\ o\ nome\ do\ canal}}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setNome(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ nome);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{comment}{//retorna\ o\ tipo\ do\ canal}}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ getTipo()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{comment}{//altera\ o\ tipo\ do\ canal}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setTipo(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ tipo);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ falta\ adicionar\ mensagem\ ao\ canal\ da\ parte\ 2!!!}}
-\DoxyCodeLine{00037\ \textcolor{comment}{*/}}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanal}{Canal}}\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ nome;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{string}\ tipo;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \textcolor{comment}{//construtor}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classCanal}{Canal}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//sobrecarregado}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classCanal}{Canal}}(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ nome,\ \textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ tipo);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//destrutor}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classCanal}{\string~Canal}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//retorna\ o\ nome\ do\ canal}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ getNome()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//altera\ o\ nome\ do\ canal}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setNome(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ nome);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//retorna\ o\ tipo\ do\ canal}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ getTipo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//altera\ o\ tipo\ do\ canal}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setTipo(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ tipo);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//vetor\ de\ mensagens}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ vector<Mensagem>\ getMensagens()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ \textcolor{comment}{//adiciona\ mensagem\ ao\ vetor\ de\ mensagens}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ sendMensagem(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMensagem}{Mensagem}}\ mensagem)\ =\ 0;}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

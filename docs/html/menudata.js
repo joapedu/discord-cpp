@@ -27,6 +27,7 @@ var menudata={children:[
 {text:"Páginas relacionadas",url:"pages.html"},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Lista de Classes",url:"annotated.html"},
-{text:"Índice dos Componentes",url:"classes.html"}]},
+{text:"Índice dos Componentes",url:"classes.html"},
+{text:"Hierarquia de Classes",url:"hierarchy.html"}]},
 {text:"Arquivos",url:"files.html",children:[
 {text:"Lista de Arquivos",url:"files.html"}]}]}
