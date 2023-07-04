@@ -94,10 +94,23 @@ $ ./Concordo
 #### `enter-channel`
 
 - Entra em um canal de um determinado servidor.
+
+#### `send-message`
+
+- Envia uma mensagem de texto para um canal.
+
+#### `list-messages`
+
+- Lista todas as mensagens de um canal.
 </div>
-<hr>
 <div align="center">
 
 ## Doxygen feito como forma de documentação do código.
 ### De toda forma, todo o código está comentado e explicado.
+</div>
+
+-----
+
+<div align="end">
+<span style="color: red; text-width: 120%; ">Desenvolvido por João Eduardo Braga</span>
 </div>
