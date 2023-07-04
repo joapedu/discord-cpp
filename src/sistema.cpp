@@ -41,7 +41,7 @@ string Sistema::create_user (const string email, const string senha, const strin
   return "Usuário criado!";
 }
 
-/* Conecta um usuário. */
+//conecta um usuário.
 string Sistema::login(const string email, const string senha) {
   carregar();
 
@@ -60,7 +60,7 @@ string Sistema::login(const string email, const string senha) {
   return "Não foi possível realizar o login.\nO usuário " + usuarios[usuarioLogadoId - 1].getEmail() + " encontra-se logado!";
 }
 
-/* Desconecta um usuário */
+//desconecta um usuário
 string Sistema::disconnect() {
   if (!usuarioLogadoId) return "Não há um usuário conectado no momento.";
 
@@ -70,7 +70,7 @@ string Sistema::disconnect() {
   return "Desconectando usuário " + usuarios[usuarioLogadoIdAnterior - 1].getEmail() + ".";
 }
 
-/* Cria um novo servidor. */
+//cria um novo servidor.
 string Sistema::create_server(const string nome) {
   carregar();
 
@@ -94,7 +94,7 @@ string Sistema::create_server(const string nome) {
   return "Servidor criado.";
 }
 
-/* Altera a descrição de um servidor. */
+//altera a descrição de um servidor.
 string Sistema::set_server_desc(const string nome, const string descricao) {
   carregar();
 
@@ -122,7 +122,7 @@ string Sistema::set_server_desc(const string nome, const string descricao) {
   return "Descrição do servidor \'" + nome + "\' modificada.";
 }
 
-/* Altera o código de convite de um servidor. */
+//altera o código de convite de um servidor.
 string Sistema::set_server_invite_code(const string nome, const string codigo) {
   carregar();
 
@@ -151,7 +151,7 @@ string Sistema::set_server_invite_code(const string nome, const string codigo) {
   else return "Código de convite do servidor \'" + nome + "\' removido.";
 }
 
-/* Lista servidores. */
+//lista servidores.
 string Sistema::list_servers() {
   carregar();
 
@@ -168,7 +168,7 @@ string Sistema::list_servers() {
   return listaServidores;
 }
 
-/* Remove um servidor. */
+//remove um servidor.
 string Sistema::remove_server(const string nome) {
   carregar();
 
@@ -194,7 +194,7 @@ string Sistema::remove_server(const string nome) {
   return "Servidor \'" + nome + "\' removido.";
 }
 
-/* Entra em um servidor. */
+// entra em um servidor.
 string Sistema::enter_server(const string nome, const string codigo) {
   carregar();
 
@@ -234,7 +234,7 @@ string Sistema::enter_server(const string nome, const string codigo) {
   }
 }
 
-/* Sai de um servidor. */
+//sai de um servidor.
 string Sistema::leave_server() {
   carregar();
 
@@ -249,7 +249,7 @@ string Sistema::leave_server() {
   return "Saindo do servidor \'" + nomeServidor + "\'.";
 }
 
-/* Lista participantes de um servidor. */
+//lista participantes de um servidor.
 string Sistema::list_participants() {
   carregar();
 
@@ -279,7 +279,7 @@ string Sistema::list_participants() {
   return listaParticipantes;
 }
 
-/* Lista canais de um servidor. */
+//lista canais de um servidor. 
 string Sistema::list_channels() {
   carregar();
 
@@ -292,9 +292,34 @@ string Sistema::list_channels() {
   auto findServidor = find_if(servidores.begin(), servidores.end(), [nomeServidor](Servidor servidor) {
     return servidor.getNome() == nomeServidor;
   });
-}    // falta parte 2 de mensagens (voz e texto)
 
-/* Cria um novo canal em um servidor. */
+  vector<string> canaisTexto = findServidor->getCanaisTexto();
+  vector<string> canaisVoz = findServidor->getCanaisVoz();
+
+  if (canaisTexto.empty() && canaisVoz.empty()) return "Nenhum canal no servidor foi encontrado.";
+
+  string canais;
+
+  if (!canaisTexto.empty()) {
+    canais += "#canais de texto\n";
+
+    for (auto findCanal = canaisTexto.begin(); findCanal != canaisTexto.end(); findCanal++) {
+      if (findCanal != canaisTexto.end()) canais += *findCanal + "\n";
+    }
+  }
+
+  if (!canaisVoz.empty()) {
+    canais += "#canais de voz\n";
+
+    for (auto findCanal = canaisVoz.begin(); findCanal != canaisVoz.end(); findCanal++) {
+      if (findCanal != canaisVoz.end()) canais += *findCanal + "\n";
+    }
+  }
+
+  return canais;
+}
+
+//cria um novo canal em um servidor
 string Sistema::create_channel(const string nome, const string tipo) {
   carregar();
 
@@ -311,9 +336,47 @@ string Sistema::create_channel(const string nome, const string tipo) {
   auto findServidor = find_if(servidores.begin(), servidores.end(), [nomeServidor](Servidor servidor) {
     return servidor.getNome() == nomeServidor;
   });
-}     // falta parte 2 de mensagens (voz e texto)
 
-/* Entra em um canal. */
+  if (tipo == "texto") {
+    vector<string> canaisTexto = findServidor->getCanaisTexto();
+
+    auto findCanal = find_if(canaisTexto.begin(), canaisTexto.end(), [nome](string nomeCanal) {
+      return nomeCanal == nome;
+    });
+
+    if (findCanal != canaisTexto.end()) return "Canal de texto \'" + nome + "\' já existe.";
+
+    shared_ptr <CanalTexto> newCanal(new CanalTexto(nome, tipo));
+
+    bool canalCriado = findServidor->createCanal(newCanal);
+
+    salvar();
+
+    if (canalCriado) return "Canal de texto \'" + nome + "\' criado.";
+
+    return "Erro ao criar canal de texto.";
+  } else {
+    vector<string> canaisVoz = findServidor->getCanaisVoz();
+
+    auto findCanal = find_if(canaisVoz.begin(), canaisVoz.end(), [nome](string nomeCanal) {
+      return nomeCanal == nome;
+    });
+
+    if (findCanal != canaisVoz.end()) return "Canal de voz \'" + nome + "\' já existe.";
+
+    shared_ptr <CanalVoz> newCanal(new CanalVoz(nome, tipo));
+
+    bool canalCriado = findServidor->createCanal(newCanal);
+
+    salvar();
+
+    if (canalCriado) return "Canal de voz \'" + nome + "\' criado.";
+
+    return "Erro ao criar canal de voz.";
+  }
+}
+
+//entra em um canal.
 string Sistema::enter_channel(const string nome, const string tipo) {
   carregar();
 
@@ -330,9 +393,29 @@ string Sistema::enter_channel(const string nome, const string tipo) {
   auto findServidor = find_if(servidores.begin(), servidores.end(), [nomeServidor](Servidor servidor) {
     return servidor.getNome() == nomeServidor;
   });
+
+  vector<string> findCanaisTexto = findServidor->getCanaisTexto();
+  auto itCanalTexto = find_if(findCanaisTexto.begin(), findCanaisTexto.end(), [nome](std::string nomeCanal) {
+    return nomeCanal == nome;
+  });
+
+  vector<string> findCanaisVoz = findServidor->getCanaisVoz();
+  auto itCanalVoz = find_if(findCanaisVoz.begin(), findCanaisVoz.end(), [nome](std::string nomeCanal) {
+    return nomeCanal == nome;
+  });
+
+  if (itCanalTexto != findCanaisTexto.end() && itCanalVoz != findCanaisVoz.end()) {
+    nomeCanalConectado = nome;
+
+    return "Entrou no canal de " + tipo + " \'" + nome + "\'.";
+  } else {
+    nomeCanalConectado = nome;
+
+    return "Entrou no canal \'" + nome + "\'.";
+  }
 }
 
-/* Sai de um canal. */
+//sai de um canal.
 string Sistema::leave_channel() {
   carregar();
 
@@ -349,7 +432,7 @@ string Sistema::leave_channel() {
   return "Saindo do canal \'" + nomeCanal + "\'.";
 }
 
-/* Salva usuários em um arquivo de texto. */
+// salva usuários em um arquivo de texto.
 void Sistema::salvarUsuarios() {
   ofstream file("usuarios.txt");
 
@@ -370,7 +453,7 @@ void Sistema::salvarUsuarios() {
   file.close();
 }
 
-/* salva servidores em um arquivo de texto. */
+// salva servidores em um arquivo de texto.
 void Sistema::salvarServidores() {
   ofstream file("servidores.txt");
 
@@ -399,7 +482,7 @@ void Sistema::salvarServidores() {
   file.close();
 }
 
-/* carrega usuários de um arquivo de texto. */
+// carrega usuários de um arquivo de texto.
 void Sistema::carregarUsuarios() {
   ifstream file("usuarios.txt");
 
@@ -437,7 +520,7 @@ void Sistema::carregarUsuarios() {
   file.close();
 }
 
-/* carrega servidores de um arquivo de texto. */
+// carrega servidores de um arquivo de texto.
 void Sistema::carregarServidores() {
   ifstream file("servidores.txt");
 
@@ -493,13 +576,13 @@ void Sistema::carregarServidores() {
   file.close();
 }
 
-/* salva dados da aplicação. */
+// salva dados da aplicação.
 void Sistema::salvar() {
   salvarUsuarios();
   salvarServidores();
 }
 
-/* carrega dados da aplicação. */
+// carrega dados da aplicação.
 void Sistema::carregar() {
   int fileSize = 0;
 

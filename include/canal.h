@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "mensagem.h"
+
 using namespace std;
 
 class Canal {
@@ -32,9 +34,10 @@ class Canal {
 //altera o tipo do canal
     virtual void setTipo(string const tipo);
 
-/*
-    falta adicionar mensagem ao canal da parte 2!!!
-*/
+//vetor de mensagens
+    virtual vector<Mensagem> getMensagens() const = 0;
+//adiciona mensagem ao vetor de mensagens
+    virtual void sendMensagem(const Mensagem mensagem) = 0;
 };
 
 #endif
