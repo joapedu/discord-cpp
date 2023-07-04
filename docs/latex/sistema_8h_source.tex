@@ -1,0 +1,95 @@
+\hypertarget{sistema_8h_source}{}\doxysection{sistema.\+h}
+\label{sistema_8h_source}\index{include/sistema.h@{include/sistema.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SISTEMA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SISTEMA\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}usuario.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}servidor.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSistema}{Sistema}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ vector\ <Servidor>\ servidores;}
+\DoxyCodeLine{00015\ \ \ \ \ vector\ <Usuario>\ usuarios;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ usuarioLogadoId;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ nomeServidorConectado;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ nomeCanalConectado;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ salvarUsuarios();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ salvarServidores();}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ carregarUsuarios();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ carregarServidores();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classSistema}{Sistema}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classSistema}{\string~Sistema}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//salva\ dados\ da\ aplicação.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ salvar();}
+\DoxyCodeLine{00032\ \textcolor{comment}{//carrega\ dados\ da\ aplicação.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ carregar();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//sair}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{string}\ quit();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//cria\ um\ novo\ usuário.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{string}\ create\_user\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ email,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ senha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome);}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//conecta\ um\ usuário.}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{string}\ login(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ email,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ senha);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//desconecta\ um\ usuário}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{string}\ disconnect();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//cria\ um\ novo\ servidor.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{string}\ create\_server(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//altera\ a\ descrição\ de\ um\ servidor.}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{string}\ set\_server\_desc(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ descricao);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//altera\ o\ código\ de\ convite\ de\ um\ servidor.}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{string}\ set\_server\_invite\_code(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//lista\ servidores.}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{string}\ list\_servers();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//remove\ um\ servidor.}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{string}\ remove\_server(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//entra\ em\ um\ servidor.}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{string}\ enter\_server(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//sai\ de\ um\ servidor.}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{string}\ leave\_server();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//lista\ participantes\ de\ um\ servidor.}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{string}\ list\_participants();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//lista\ canais\ de\ um\ servidor.}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{string}\ list\_channels();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//cria\ um\ novo\ canal\ em\ um\ servidor.}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{string}\ create\_channel(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ tipo);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//entra\ em\ um\ canal.}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{string}\ enter\_channel(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ nome,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ tipo);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//sai\ de\ um\ canal.}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{string}\ leave\_channel();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//envia\ mensagem\ em\ um\ canal.}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{string}\ send\_message(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ mensagem);}
+\DoxyCodeLine{00085\ \textcolor{comment}{//lista\ as\ mensagens\ de\ um\ canal.}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{string}\ list\_messages();}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\hypertarget{classCanal}{}\doxysection{Referência da Classe Canal}
+\label{classCanal}\index{Canal@{Canal}}
+Diagrama de hierarquia para Canal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCanal}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanal_a8ffd824fcd7e7728a9e4b26a01abfc60}\label{classCanal_a8ffd824fcd7e7728a9e4b26a01abfc60}} 
+{\bfseries Canal} (string const nome, string const tipo)
+\item 
+\mbox{\Hypertarget{classCanal_aed71c140a80e6fe8bddc08855126e2b2}\label{classCanal_aed71c140a80e6fe8bddc08855126e2b2}} 
+virtual string {\bfseries get\+Nome} () const
+\item 
+\mbox{\Hypertarget{classCanal_ab978d8652fd86be89d3a34e7dec9cef8}\label{classCanal_ab978d8652fd86be89d3a34e7dec9cef8}} 
+virtual void {\bfseries set\+Nome} (string const nome)
+\item 
+\mbox{\Hypertarget{classCanal_af19383eb507df2c30c7a296b32ffe6ad}\label{classCanal_af19383eb507df2c30c7a296b32ffe6ad}} 
+virtual string {\bfseries get\+Tipo} () const
+\item 
+\mbox{\Hypertarget{classCanal_aa4d2b1d67bca508c096d318765cba610}\label{classCanal_aa4d2b1d67bca508c096d318765cba610}} 
+virtual void {\bfseries set\+Tipo} (string const tipo)
+\item 
+\mbox{\Hypertarget{classCanal_ac2f95842860209d2e2a64e5eab2206a1}\label{classCanal_ac2f95842860209d2e2a64e5eab2206a1}} 
+virtual vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ {\bfseries get\+Mensagens} () const =0
+\item 
+\mbox{\Hypertarget{classCanal_abdcbc81dd8abc9c6875c8bc0872d34a6}\label{classCanal_abdcbc81dd8abc9c6875c8bc0872d34a6}} 
+virtual void {\bfseries send\+Mensagem} (const \mbox{\hyperlink{classMensagem}{Mensagem}} mensagem)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanal_afd954cccffc652f0e59007c805a5467c}\label{classCanal_afd954cccffc652f0e59007c805a5467c}} 
+string {\bfseries nome}
+\item 
+\mbox{\Hypertarget{classCanal_a0125543494c0dde7893bf0a9dfb26921}\label{classCanal_a0125543494c0dde7893bf0a9dfb26921}} 
+string {\bfseries tipo}
+\end{DoxyCompactItemize}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/canal.\+h\item 
+src/canal.\+cpp\end{DoxyCompactItemize}

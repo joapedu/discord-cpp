@@ -1,0 +1,40 @@
+\hypertarget{mensagem_8h_source}{}\doxysection{mensagem.\+h}
+\label{mensagem_8h_source}\index{include/mensagem.h@{include/mensagem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENSAGEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENSAGEM\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMensagem}{Mensagem}}\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{string}\ dataHora;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ conteudo;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ enviadaPor;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}(\textcolor{keywordtype}{string}\ dataHora,\ \textcolor{keywordtype}{string}\ conteudo,\ \textcolor{keywordtype}{int}\ enviadaPor);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classMensagem}{\string~Mensagem}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//atributo\ dataHora}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ getDataHora()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \textcolor{comment}{//altera\ dataHora}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ setDataHora(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ dataHora);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//atributo\ conteudo}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ getConteudo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \textcolor{comment}{//altera\ conteudo}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setConteudo(\textcolor{keywordtype}{string}\ \textcolor{keyword}{const}\ conteudo);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//atributo\ enviadaPor}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ getEnviadaPor()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \textcolor{comment}{//altera\ enviadaPor}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnviadaPor(\textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ enviadaPor);}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

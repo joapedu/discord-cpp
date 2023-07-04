@@ -1,0 +1,83 @@
+\hypertarget{classServidor}{}\doxysection{Referência da Classe Servidor}
+\label{classServidor}\index{Servidor@{Servidor}}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServidor_acaaeb7f11f0ff813211d45b6aef94c69}\label{classServidor_acaaeb7f11f0ff813211d45b6aef94c69}} 
+{\bfseries Servidor} (int usuario\+ID, string nome)
+\item 
+\mbox{\Hypertarget{classServidor_a7ff1ea453e0dd3be64e733ac14508d9d}\label{classServidor_a7ff1ea453e0dd3be64e733ac14508d9d}} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classCanal}{Canal}} $>$ $>$ {\bfseries get\+Canais} () const
+\item 
+\mbox{\Hypertarget{classServidor_a7a901af3a7335920271180dd4e917bbd}\label{classServidor_a7a901af3a7335920271180dd4e917bbd}} 
+bool {\bfseries create\+Canal} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classCanal}{Canal}} $>$ canal)
+\item 
+\mbox{\Hypertarget{classServidor_a5d8d1e214c980de0beeb68a4e7d0941c}\label{classServidor_a5d8d1e214c980de0beeb68a4e7d0941c}} 
+string {\bfseries get\+Nome} () const
+\item 
+\mbox{\Hypertarget{classServidor_a6f4961c75048a82c01a8c61eb31bbaeb}\label{classServidor_a6f4961c75048a82c01a8c61eb31bbaeb}} 
+void {\bfseries set\+Nome} (string const nome)
+\item 
+\mbox{\Hypertarget{classServidor_a4a3adb34f462e995bd5730f05fa52290}\label{classServidor_a4a3adb34f462e995bd5730f05fa52290}} 
+string {\bfseries get\+Descricao} () const
+\item 
+\mbox{\Hypertarget{classServidor_ae69f63bd09c8a0a6499155ff6633d17a}\label{classServidor_ae69f63bd09c8a0a6499155ff6633d17a}} 
+void {\bfseries set\+Descricao} (string const descricao)
+\item 
+\mbox{\Hypertarget{classServidor_a109e63bf76c3d860fbf62d3756c0e990}\label{classServidor_a109e63bf76c3d860fbf62d3756c0e990}} 
+int {\bfseries get\+Usuario\+Id} () const
+\item 
+\mbox{\Hypertarget{classServidor_a8891b2fcc0d7d90c9c1be32645f13d4d}\label{classServidor_a8891b2fcc0d7d90c9c1be32645f13d4d}} 
+void {\bfseries set\+Usuario\+Id} (int const usuario\+ID)
+\item 
+\mbox{\Hypertarget{classServidor_afa3e4a11487e42013d710b06ed38960d}\label{classServidor_afa3e4a11487e42013d710b06ed38960d}} 
+vector$<$ int $>$ {\bfseries get\+Membros\+Ids} ()
+\item 
+\mbox{\Hypertarget{classServidor_ac95b73870e2937e5d53f021f49a5b297}\label{classServidor_ac95b73870e2937e5d53f021f49a5b297}} 
+bool {\bfseries push\+Participante} (int const membro\+Id)
+\item 
+\mbox{\Hypertarget{classServidor_a4a26332878006853cab64617bf0c7642}\label{classServidor_a4a26332878006853cab64617bf0c7642}} 
+string {\bfseries get\+Solicitacao} () const
+\item 
+\mbox{\Hypertarget{classServidor_a94a9b00998d4428d6ce9a16fabf178db}\label{classServidor_a94a9b00998d4428d6ce9a16fabf178db}} 
+void {\bfseries set\+Solicitacao} (string const solicitacao)
+\item 
+\mbox{\Hypertarget{classServidor_aab18d1a0d9237c14a603851d0269f2c4}\label{classServidor_aab18d1a0d9237c14a603851d0269f2c4}} 
+vector$<$ string $>$ {\bfseries get\+Canais\+Texto} () const
+\item 
+\mbox{\Hypertarget{classServidor_aa9dbdd2565570d54e364e789b464a7a0}\label{classServidor_aa9dbdd2565570d54e364e789b464a7a0}} 
+vector$<$ string $>$ {\bfseries get\+Canais\+Voz} () const
+\item 
+\mbox{\Hypertarget{classServidor_a794cb2ce43f0565ed43d0deae83c4dc4}\label{classServidor_a794cb2ce43f0565ed43d0deae83c4dc4}} 
+vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ {\bfseries get\+Mensagens} (const string nome\+Canal)
+\item 
+\mbox{\Hypertarget{classServidor_a5d3b9428ad82d779e5079c36288d6c04}\label{classServidor_a5d3b9428ad82d779e5079c36288d6c04}} 
+void {\bfseries send\+Mensagem} (const string nome\+Canal, const \mbox{\hyperlink{classMensagem}{Mensagem}} mensagem)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServidor_a47959c776abd48d8c37c4ba74771e35a}\label{classServidor_a47959c776abd48d8c37c4ba74771e35a}} 
+int {\bfseries usuario\+ID}
+\item 
+\mbox{\Hypertarget{classServidor_afe5b8d9c020be2cdea189f3aa5958b2d}\label{classServidor_afe5b8d9c020be2cdea189f3aa5958b2d}} 
+string {\bfseries nome}
+\item 
+\mbox{\Hypertarget{classServidor_ac835192fb099563bd7248b2594be796d}\label{classServidor_ac835192fb099563bd7248b2594be796d}} 
+string {\bfseries descricao}
+\item 
+\mbox{\Hypertarget{classServidor_aeab1bfdb0058683306e92cce8ff10fc6}\label{classServidor_aeab1bfdb0058683306e92cce8ff10fc6}} 
+string {\bfseries solicitacao}
+\item 
+\mbox{\Hypertarget{classServidor_a4285c728ce3417dfe372a751160d504b}\label{classServidor_a4285c728ce3417dfe372a751160d504b}} 
+vector$<$ int $>$ {\bfseries membros\+Ids}
+\item 
+\mbox{\Hypertarget{classServidor_a88e9f4c2d464abfbcdd63aac290101c8}\label{classServidor_a88e9f4c2d464abfbcdd63aac290101c8}} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classCanal}{Canal}} $>$ $>$ {\bfseries canais}
+\end{DoxyCompactItemize}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/servidor.\+h\item 
+src/servidor.\+cpp\end{DoxyCompactItemize}

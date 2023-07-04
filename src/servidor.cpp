@@ -65,6 +65,27 @@ vector <shared_ptr <Canal>> Servidor::getCanais() const {
   return canais;
 }
 
+// parte 2
+vector<string> Servidor::getCanaisTexto() const {
+  vector<string> listaCanais;
+
+  for (auto itCanal = canais.begin(); itCanal != canais.end(); itCanal++) {
+    if (dynamic_pointer_cast <CanalTexto> (*itCanal)) listaCanais.push_back((*itCanal)->getNome());
+  }
+
+  return listaCanais;
+}
+
+vector<string> Servidor::getCanaisVoz() const {
+  vector<string> listaCanais;
+
+  for (auto itCanal = canais.begin(); itCanal != canais.end(); itCanal++) {
+    if (dynamic_pointer_cast <CanalVoz> (*itCanal)) listaCanais.push_back((*itCanal)->getNome());
+  }
+
+  return listaCanais;
+}
+
 bool Servidor::createCanal(shared_ptr <Canal> canal) {
   if (canal == nullptr) return false;
 
@@ -73,7 +94,7 @@ bool Servidor::createCanal(shared_ptr <Canal> canal) {
   return true;
 }
 
-// Insere um usuário na lista de participantes do servidor
+//coloca um usuário na lista de participantes do servidor
 bool Servidor::pushParticipante(int const participanteId) {
   for (int i = 0; i < membrosIds.size(); i++) {
     if (membrosIds[i] == participanteId) return false;
@@ -82,4 +103,20 @@ bool Servidor::pushParticipante(int const participanteId) {
   membrosIds.push_back(participanteId);
 
   return true;
+}
+
+vector<Mensagem> Servidor::getMensagens(const string nomeCanal) {
+  auto findCanal = find_if(canais.begin(), canais.end(), [nomeCanal](std::shared_ptr <Canal> canal) {
+    return canal->getNome() == nomeCanal;
+  });
+
+  return (*findCanal)->getMensagens();
+}
+
+void Servidor::sendMensagem(const string nomeCanal, const Mensagem mensagem) {
+  auto findCanal = find_if(canais.begin(), canais.end(), [nomeCanal](std::shared_ptr <Canal> canal) {
+    return canal->getNome() == nomeCanal;
+  });
+
+  (*findCanal)->sendMensagem(mensagem);
 }
