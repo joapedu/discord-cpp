@@ -5,8 +5,8 @@
 #include <memory>
 
 #include "canal.h"
-#include "texto.h"
-#include "voz.h"
+// #include "texto.h"
+// #include "voz.h"
 
 using namespace std;
 
@@ -57,15 +57,6 @@ class Servidor {
     string getSolicitacao() const;
 //altera o código de solicitacao do servidor
     void setSolicitacao(string const solicitacao);
-
-//canais de texto do servidor
-    vector<string> getCanaisTexto() const;
-//canais de voz do servidor
-    vector<string> getCanaisVoz() const;
-//vetor com as mensagens de um canal no servidor
-    vector<Mensagem> getMensagens(const string nomeCanal);
-//envia uma mensagem em um canal no servidor
-    void sendMensagem(const string nomeCanal, const Mensagem mensagem);
 };
 
 #endif

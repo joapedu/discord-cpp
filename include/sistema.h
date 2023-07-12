@@ -80,10 +80,6 @@ class Sistema {
 //sai de um canal.
     string leave_channel();
 
-//envia mensagem em um canal.
-    string send_message(const string mensagem);
-//lista as mensagens de um canal.
-    string list_messages();
 };
 
 #endif
