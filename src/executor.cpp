@@ -139,16 +139,6 @@ string Executor::processarLinha(string linha) {
     return sistema->leave_channel();
   }
 
-  else if (nomeComando == "send-message") {
-    string mensagem;
-    mensagem = restante(buf);
-    return sistema->send_message(mensagem);
-  }
-
-  else if (nomeComando == "list-messages") {
-    return sistema->list_messages();
-  }
-
   else {
     return "Comando não reconhecido [" + nomeComando + "]";
   }
